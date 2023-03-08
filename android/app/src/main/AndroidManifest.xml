@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.hw_javis">
+    package="com.studiomotorway.search_image">
    <application
-        android:label="hw_javis"
+        android:label="search_image"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

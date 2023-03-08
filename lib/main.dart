@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:search_image/kakap_api.dart';
+import 'package:search_image/pages/page_favorate.dart';
+import 'package:search_image/pages/page_search.dart';
 
 void main() {
-  runApp(const SearchImageDemo());
+  runApp(SearchImageDemo(api: KakaoApi()));
 }
 
 class SearchImageDemo extends StatelessWidget {
-  const SearchImageDemo({super.key});
+  final KakaoApi api;
+  const SearchImageDemo({super.key, required this.api});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: DefaultTabController(
-        length: 3,
+        length: 2,
         child: Scaffold(
           appBar: AppBar(
             bottom: const TabBar(
@@ -22,11 +26,10 @@ class SearchImageDemo extends StatelessWidget {
             ),
             title: const Text('Image Search Demo'),
           ),
-          body: const TabBarView(
+          body: TabBarView(
             children: [
-              Icon(Icons.directions_car),
-              Icon(Icons.directions_transit),
-              //Icon(Icons.directions_bike),
+              PageSearch(api: api),
+              PageFavorate(),
             ],
           ),
         ),

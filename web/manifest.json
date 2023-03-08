@@ -1,6 +1,6 @@
 {
-    "name": "hw_javis",
-    "short_name": "hw_javis",
+    "name": "search_image",
+    "short_name": "search_image",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
