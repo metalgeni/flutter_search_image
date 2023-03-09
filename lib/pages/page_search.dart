@@ -31,7 +31,6 @@ class _PageSearchState extends State<PageSearch> {
 
   @override
   Widget build(BuildContext context) {
-    print('빌드 서치>>>>');
     return StreamBuilder<SearchState>(
       stream: bloc.state,
       initialData: SearchNoTerm(),
@@ -79,7 +78,6 @@ class _PageSearchState extends State<PageSearch> {
         alignment: FractionalOffset.center,
         child: const CircularProgressIndicator(),
       );
-      CircularProgressIndicator();
     } else if (state is SearchError) {
       return const Text("검색 에러");
     } else if (state is SearchPopulated) {
