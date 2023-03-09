@@ -56,10 +56,10 @@ class _PageSearchState extends State<PageSearch> {
                   ),
                 ),
                 Expanded(
-                  child: AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 300),
-                    child: _buildChild(state),
-                  ),
+                  // child: AnimatedSwitcher(
+                  //   duration: const Duration(milliseconds: 300),
+                  child: _buildChild(state),
+                  //),
                 )
               ])
             ],
@@ -75,7 +75,11 @@ class _PageSearchState extends State<PageSearch> {
     } else if (state is SearchEmpty) {
       return const Text("결과 없음");
     } else if (state is SearchLoading) {
-      return const CircularProgressIndicator();
+      return Container(
+        alignment: FractionalOffset.center,
+        child: const CircularProgressIndicator(),
+      );
+      CircularProgressIndicator();
     } else if (state is SearchError) {
       return const Text("검색 에러");
     } else if (state is SearchPopulated) {

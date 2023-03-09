@@ -57,7 +57,6 @@ class SearchResult {
   }
 
   bool get isPopulated => items.isNotEmpty;
-
   bool get isEmpty => items.isEmpty;
 }
 
