@@ -1,6 +1,8 @@
 class GlobalDefine {
   static const String favoritesBox = 'favorite_images';
 
+  static const String search = '검색';
+  static const String favorate = '즐겨찾기';
   static const String imageSearch = '이미지 검색';
   static const String inputSearchWord = '검색어를 입력하세요.';
   static const String notFound = '결과 없음';

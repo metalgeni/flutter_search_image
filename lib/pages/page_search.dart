@@ -53,7 +53,7 @@ class PageSearchState extends State<PageSearch> {
                 Container(
                   padding: const EdgeInsets.fromLTRB(16.0, 24.0, 16.0, 4.0),
                   child: TextField(
-                    autofocus: true,
+                    //autofocus: true,
                     controller: _textEditingController,
                     decoration: const InputDecoration(
                       labelText: GlobalDefine.imageSearch,

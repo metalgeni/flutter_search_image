@@ -1,4 +1,4 @@
-package com.example.hw_javis
+package com.studiomotorway.search_image
 
 import io.flutter.embedding.android.FlutterActivity
 

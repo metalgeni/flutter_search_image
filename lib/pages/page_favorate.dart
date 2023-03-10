@@ -16,7 +16,7 @@ class PageFavorate extends StatelessWidget {
       removeTop: true,
       child: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
+            crossAxisCount: 2,
           ),
           itemCount: favNotifier.favs.length,
           itemBuilder: (BuildContext context, int index) {
@@ -58,9 +58,13 @@ class PageFavorate extends StatelessWidget {
                     ),
                     const SizedBox(height: 5),
                     ElevatedButton.icon(
-                        onPressed: () => favNotifier.remove(favUrl),
-                        icon: const Icon(Icons.remove),
-                        label: const Text(GlobalDefine.remove)),
+                      onPressed: () => favNotifier.remove(favUrl),
+                      icon: const Icon(Icons.remove_circle),
+                      label: const Text(GlobalDefine.remove),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.orange, // Background color
+                      ),
+                    ),
                   ],
                 ),
               ),

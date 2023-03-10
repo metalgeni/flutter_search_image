@@ -32,8 +32,10 @@ class SearchImageDemo extends StatelessWidget {
               appBar: AppBar(
                 bottom: const TabBar(
                   tabs: [
-                    Tab(icon: Icon(Icons.search), text: "검색"),
-                    Tab(icon: Icon(Icons.favorite), text: "즐겨찾기"),
+                    Tab(icon: Icon(Icons.search), text: GlobalDefine.search),
+                    Tab(
+                        icon: Icon(Icons.favorite),
+                        text: GlobalDefine.favorate),
                   ],
                 ),
                 title: const Text('Image Search Demo'),

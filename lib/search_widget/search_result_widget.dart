@@ -17,7 +17,7 @@ class SearchResultWidget extends StatelessWidget {
       removeTop: true,
       child: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
+            crossAxisCount: 2,
           ),
           itemCount: items.length,
           itemBuilder: (BuildContext context, int index) {
@@ -133,12 +133,19 @@ class _AddButton extends StatelessWidget {
     );
     var favNotifier = context.read<FavorateModel>();
     return ElevatedButton.icon(
-        onPressed: isFavorate
-            ? () => favNotifier.remove(fav)
-            : () => favNotifier.add(fav),
-        icon: isFavorate ? const Icon(Icons.remove) : const Icon(Icons.add),
-        label: isFavorate
-            ? const Text(GlobalDefine.remove)
-            : const Text(GlobalDefine.add));
+      onPressed: isFavorate
+          ? () => favNotifier.remove(fav)
+          : () => favNotifier.add(fav),
+      icon: isFavorate
+          ? const Icon(Icons.remove_circle)
+          : const Icon(Icons.add_circle),
+      label: isFavorate
+          ? const Text(GlobalDefine.remove)
+          : const Text(GlobalDefine.add),
+      style: ElevatedButton.styleFrom(
+        backgroundColor:
+            isFavorate ? Colors.orange : Colors.blue, // Background color
+      ),
+    );
   }
 }
