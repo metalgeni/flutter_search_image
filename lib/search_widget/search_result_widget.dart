@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:search_image/define/global_define.dart';
-import 'package:search_image/kakap_api.dart';
+import 'package:search_image/model/kakap_api.dart';
 import 'package:search_image/model/favorate.dart';
 
 class SearchResultWidget extends StatelessWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:search_image/define/global_define.dart';
 
-import 'package:search_image/kakap_api.dart';
-import 'package:search_image/search_widget/search_bloc.dart';
+import 'package:search_image/model/kakap_api.dart';
+import 'package:search_image/model/search_bloc.dart';
 import 'package:search_image/search_widget/search_result_widget.dart';
 import 'package:search_image/search_widget/search_state.dart';
 

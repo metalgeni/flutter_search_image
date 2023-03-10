@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:search_image/define/global_define.dart';
 
-import 'package:search_image/kakap_api.dart';
+import 'package:search_image/model/kakap_api.dart';
 import 'package:search_image/model/favorate.dart';
 import 'package:search_image/pages/page_favorate.dart';
 import 'package:search_image/pages/page_search.dart';
