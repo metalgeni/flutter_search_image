@@ -1,16 +1,21 @@
-# search_image
+# project - search_image 
 
-A new Flutter project.
+## 간단 설명
 
-## Getting Started
+### 사용한 SDK, Package 목록
 
-This project is a starting point for a Flutter application.
+- flutter SDK 3.7.7                 
+- dart SDK 2.19.4
 
-A few resources to get you started if this is your first Flutter project:
+- rxdart: 0.27.7
+- http: 0.13.5
+- cached_network_image: 3.2.3
+- provider: 6.0.5
+- hive: 2.2.3
+- hive_flutter: 1.1.0
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 기타
+- web-debug 모드는 로컬저장이 안됩니다. 
+release로 실행하거나 안드로이드, 혹은 windows 는 debug모드는 상관없습니다.
+
