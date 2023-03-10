@@ -1,19 +1,25 @@
 import 'package:flutter/foundation.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:search_image/define/global_define.dart';
 
 class FavorateModel extends ChangeNotifier {
-  FavorateModel() {}
+  late Box<String> favoriteImageUrlBox;
 
-  final List<String> _favs = [];
+  FavorateModel() {
+    favoriteImageUrlBox = Hive.box(GlobalDefine.favoritesBox);
+  }
 
   void add(String item) {
-    _favs.add(item);
-    notifyListeners();
+    favoriteImageUrlBox.put(item, '').whenComplete(() => notifyListeners());
   }
 
   void remove(String item) {
-    _favs.remove(item);
-    notifyListeners();
+    favoriteImageUrlBox.delete(item).whenComplete(() => notifyListeners());
   }
 
-  List<String> get favs => _favs;
+  List<dynamic> get favs => favoriteImageUrlBox.keys.toList();
+
+  bool isContain(String url) {
+    return favoriteImageUrlBox.containsKey(url);
+  }
 }

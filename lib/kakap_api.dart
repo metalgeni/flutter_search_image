@@ -61,10 +61,10 @@ class SearchResult {
 }
 
 class SearchResultItem {
-  final String display_sitename;
-  final String image_url;
+  final String displaySitename;
+  final String imageUrl;
 
-  SearchResultItem(this.display_sitename, this.image_url);
+  SearchResultItem(this.displaySitename, this.imageUrl);
 
   factory SearchResultItem.fromJson(Map<String, dynamic> json) {
     return SearchResultItem(

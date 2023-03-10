@@ -1,10 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:search_image/kakap_api.dart';
+import 'package:search_image/define/global_define.dart';
 import 'package:search_image/model/favorate.dart';
-import 'package:search_image/search_widget/search_bloc.dart';
-import 'package:search_image/search_widget/search_state.dart';
 
 class PageFavorate extends StatelessWidget {
   const PageFavorate({super.key});
@@ -22,12 +20,9 @@ class PageFavorate extends StatelessWidget {
           ),
           itemCount: favNotifier.favs.length,
           itemBuilder: (BuildContext context, int index) {
-            final fav_url = favNotifier.favs[index];
+            final favUrl = favNotifier.favs[index];
 
-            return //GestureDetector(
-                //onTap: () => showItem(context, fav_url),
-                //child:
-                Card(
+            return Card(
               color: Colors.grey,
               child: Container(
                 alignment: FractionalOffset.center,
@@ -37,7 +32,7 @@ class PageFavorate extends StatelessWidget {
                   children: <Widget>[
                     Expanded(
                       child: CachedNetworkImage(
-                        imageUrl: fav_url,
+                        imageUrl: favUrl,
                         placeholder: (context, url) => Container(
                           alignment: FractionalOffset.center,
                           child: const CircularProgressIndicator(),
@@ -51,7 +46,7 @@ class PageFavorate extends StatelessWidget {
                             Container(
                               padding: const EdgeInsets.only(top: 16.0),
                               child: Text(
-                                '이미지 로딩 에러',
+                                GlobalDefine.loadingError,
                                 style: TextStyle(
                                   color: Colors.red[300],
                                 ),
@@ -61,17 +56,15 @@ class PageFavorate extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     ElevatedButton.icon(
-                        onPressed: () => favNotifier.remove(fav_url),
+                        onPressed: () => favNotifier.remove(favUrl),
                         icon: const Icon(Icons.remove),
-                        label: const Text('삭제')),
+                        label: const Text(GlobalDefine.remove)),
                   ],
                 ),
               ),
-            )
-                //)
-                ;
+            );
           }),
     );
   }

@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:search_image/define/global_define.dart';
+
 import 'package:search_image/kakap_api.dart';
 import 'package:search_image/model/favorate.dart';
 import 'package:search_image/pages/page_favorate.dart';
 import 'package:search_image/pages/page_search.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  await Hive.openBox<String>(GlobalDefine.favoritesBox);
+
   runApp(SearchImageDemo(api: KakaoApi()));
 }
 
@@ -35,7 +41,7 @@ class SearchImageDemo extends StatelessWidget {
               body: TabBarView(
                 children: [
                   PageSearch(api: api),
-                  PageFavorate(),
+                  const PageFavorate(),
                 ],
               ),
             ),
